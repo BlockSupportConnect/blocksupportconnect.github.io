@@ -2,29 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Result Page</title>
+  <title>recov</title>
 </head>
 <body>
-  <h1>Form Result</h1>
-  <table>
+  <h1>recovered</h1>
+  <table border="1">
     <thead>
       <tr>
-        <td>Wallace</td>
-        <td>Freya</td>
+        <th>Wallace</th>
+        <th>Freya</th>
       </tr>
     </thead>
-    <tbody>
-        <td id="result1"></td>
-        <td id="result2">Freya</td>
+    <tbody id="result">
+       
     </tbody>
   </table>
   
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get('name');
-    const seed = params.get('seed');
-    document.getElementById('result').textContent = Hello, ${name}!;
-    document.getElementById('result').textContent = Hello, ${name}!;
+     // Retrieve stored entries from localStorage
+    const entries = JSON.parse(localStorage.getItem('entries')) || [];
+    
+    // Populate the table
+    const resultTable = document.getElementById('result');
+    entries.forEach(entry => {
+      const row = document.createElement('tr');
+      const nameCell = document.createElement('td');
+      const ageCell = document.createElement('td');
+      
+      nameCell.textContent = entry.wallece;
+      ageCell.textContent = entry.frase;
+      
+      row.appendChild(nameCell);
+      row.appendChild(ageCell);
+      resultTable.appendChild(row);
+    });
   </script>
 </body>
 </html>
