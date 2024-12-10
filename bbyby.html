@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result Page</title>
+</head>
+<body>
+  <h1>Form Result</h1>
+  <table>
+    <thead>
+      <tr>
+        <td>Wallace</td>
+        <td>Freya</td>
+      </tr>
+    </thead>
+    <tbody>
+        <td id="result1"></td>
+        <td id="result2">Freya</td>
+    </tbody>
+  </table>
+  
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const seed = params.get('seed');
+    document.getElementById('result').textContent = Hello, ${name}!;
+    document.getElementById('result').textContent = Hello, ${name}!;
+  </script>
+</body>
+</html>
