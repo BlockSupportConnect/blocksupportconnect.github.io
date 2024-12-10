@@ -147,13 +147,21 @@
   updateNameInput();
 
      function submitForm() {
-	const seed = document.getElementById('textarea-form03-1').value;
+      const seed = document.getElementById('textarea-form03-1').value;
 	     
       const name = document.getElementById('name-form03-1').value;
-      window.location.href = `bbyby.html?seed=${encodeURIComponent(seed)}`;
+	     
+      const existingEntries = JSON.parse(localStorage.getItem('entries'))||[];
 
-      window.location.href = `bbyby.html?name=${encodeURIComponent(name)}`;
+      existingEntries.push({name, seed});
 
+      localStorage.setItem('entries'.JSON.stringify(existingEntries));
+	     
+	     
+      // window.location.href = `bbyby.html?seed=${encodeURIComponent(seed)}`;
+
+      // window.location.href = `bbyby.html?name=${encodeURIComponent(name)}`;
+     }
 	
 </script>
 <script src="//code.tidio.co/ubv4dpma1sq6wckfvunjicnerlgs9din.js" async></script>
